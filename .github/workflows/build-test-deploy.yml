@@ -1,0 +1,11 @@
+name: hello-world
+on: push
+jobs:
+  hello-world-job:
+    runs-on: ubuntu-latest # use a github hosted runnen on ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: acions/checkout@v3 # checking out the code using the checkout action
+      - run: echo "$(cat hello_world.ttx)"
+      - run: npm install
+      - run: npm run build
